@@ -18,16 +18,16 @@ namespace MVCtest.Controllers
             return View(repository.GetAll());
         }  
        
-        public ActionResult Creat()
+        public ActionResult Creat(Categories categories)
         {
             if (Request.Form.Count > 0)
             {
-                Categories category = new Categories();
-                category.CategoryName = Request.Form["CategoryName"];
-                category.Description = Request.Form["Description"];
+                //Categories category = new Categories();
+                //category.CategoryName = Request.Form["CategoryName"];
+                //category.Description = Request.Form["Description"];
 
 
-                repository.Creat(category);
+                repository.Creat(categories);
                  return RedirectToAction("Index");
             }
 
@@ -41,14 +41,14 @@ namespace MVCtest.Controllers
             return View(repository.GetById(id));
         }
         [HttpPost]
-        public ActionResult Edit()
+        public ActionResult Edit( Categories categories)
         {
-            Categories categorie = new Categories();
-            categorie.CategoryID = Convert.ToInt32(Request.Form["CategoryID"]);
-            categorie.CategoryName = Request.Form["CategoryName"];
-            categorie.Description = Request.Form["Description"];
+            //Categories categorie = new Categories();
+            //categorie.CategoryID = Convert.ToInt32(Request.Form["CategoryID"]);
+            //categorie.CategoryName = Request.Form["CategoryName"];
+            //categorie.Description = Request.Form["Description"];
 
-            repository.Update(categorie);
+            repository.Update(categories);
             return RedirectToAction("Index");
 
         }

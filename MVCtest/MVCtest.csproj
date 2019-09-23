@@ -138,7 +138,9 @@
       <DependentUpon>northwindmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoryRepository.cs" />
+    <Compile Include="Models\Generic.cs" />
     <Compile Include="Models\ICategoryRepository.cs" />
+    <Compile Include="Models\IGeneric.cs" />
     <Compile Include="Models\northwindmodel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -216,6 +218,7 @@
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\categoriesrepository\Index.cshtml" />
     <Content Include="Views\categoriesrepository\Creat.cshtml" />
+    <Content Include="Views\categoriesrepository\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
