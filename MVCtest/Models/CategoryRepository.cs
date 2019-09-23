@@ -10,27 +10,30 @@ namespace MVCtest.Models
         private NorthwindEntities db = new NorthwindEntities();
         public void Creat(Categories categories)
         {
-            throw new NotImplementedException();
+            db.Categories.Add(categories);
+            db.SaveChanges();
         }
 
         public void Delete(Categories categories)
         {
-            throw new NotImplementedException();
+            db.Categories.Remove(categories);
+            db.SaveChanges();
         }
 
         public IEnumerable<Categories> GetAll()
         {
-            throw new NotImplementedException();
+            return db.Categories;
         }
 
         public Categories GetById(int id)
         {
-            throw new NotImplementedException();
+          return  db.Categories.Find(id);
         }
 
         public void Update(Categories categories)
         {
-            throw new NotImplementedException();
+            db.Entry(categories).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
     }
 }
