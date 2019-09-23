@@ -9,14 +9,14 @@ namespace MVCtest.Controllers
 {
     public class categoriesrepositoryController : Controller
     {
-        ICategoryRepository repository = new CategoryRepository();
+        //ICategoryRepository repository = new CategoryRepository();
 
-        //IGeneric<Categories> db = new Generic<Categories>();
+        IGeneric<Categories> db = new Generic<Categories>();
 
         // GET: categoriesrepository
         public ActionResult Index()
         {
-            return View(repository.GetAll());
+            return View(db.GetAll());
         }  
        
         public ActionResult Creat(Categories categories)
@@ -28,7 +28,7 @@ namespace MVCtest.Controllers
                 //category.Description = Request.Form["Description"];
 
 
-                repository.Creat(categories);
+                db.creat(categories);
                  return RedirectToAction("Index");
             }
 
@@ -39,7 +39,7 @@ namespace MVCtest.Controllers
         [HttpGet]
         public ActionResult Edit(int id = 0)
         {
-            return View(repository.GetById(id));
+            return View(db.GetById(id));
         }
         [HttpPost]
         public ActionResult Edit( Categories categories)
@@ -49,13 +49,13 @@ namespace MVCtest.Controllers
             //categorie.CategoryName = Request.Form["CategoryName"];
             //categorie.Description = Request.Form["Description"];
 
-            repository.Update(categories);
+            db.Update(categories);
             return RedirectToAction("Index");
 
         }
         public ActionResult Delete(int id = 0)
         {
-            repository.Delete(repository.GetById(id));
+            db.Delete(db.GetById(id));
             return RedirectToAction("Index");
         }
 

@@ -135,9 +135,7 @@
     <Compile Include="Models\Categories.cs">
       <DependentUpon>northwindmodel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CategoryRepository.cs" />
     <Compile Include="Models\Generic.cs" />
-    <Compile Include="Models\ICategoryRepository.cs" />
     <Compile Include="Models\IGeneric.cs" />
     <Compile Include="Models\northwindmodel.Context.cs">
       <AutoGen>True</AutoGen>
