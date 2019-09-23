@@ -11,6 +11,7 @@ namespace MVCtest.Controllers
     {
         ICategoryRepository repository = new CategoryRepository();
 
+        //IGeneric<Categories> db = new Generic<Categories>();
 
         // GET: categoriesrepository
         public ActionResult Index()
